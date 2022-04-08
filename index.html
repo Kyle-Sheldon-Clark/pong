@@ -15,12 +15,20 @@
 
         const paddle1 = {x: 10, y: 50};
         const paddle2 = {x: 285, y: 50};
+        const ball = {x: 150, y: 65};
 
-        function renderPaddle(paddle) {
+        function renderPlayer1Paddle(paddle) {
             coolCtx.fillStyle = 'white';
             coolCtx.fillRect(paddle.x, paddle.y, 5, 40);
         }
-
+        function renderPlayer2Paddle(paddle) {
+            coolCtx.fillStyle = 'white';
+            coolCtx.fillRect(paddle.x, paddle.y, 5, 40);
+        }
+        function renderBall() {
+            coolCtx.fillStyle = 'white';
+            coolCtx.fillRect(ball.x, ball.y, 5, 5);
+        }
         function displayPlayer1Score(score) {
             coolCtx.font = "15px Arial";
             coolCtx.fillStyle = 'white';
@@ -31,8 +39,10 @@
             coolCtx.fillStyle = 'white';
             coolCtx.fillText(score, (cool.width/2)+15, 15);
         }
-        renderPaddle(paddle1);
-        renderPaddle(paddle2);
+
+        renderPlayer1Paddle(paddle1);
+        renderPlayer2Paddle(paddle2);
+        renderBall();
         displayPlayer1Score(30);
         displayPlayer2Score(30);
     </script>
