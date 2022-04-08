@@ -8,6 +8,20 @@
     <title>Pong</title>
 </head>
 <body>
-    <canvas id="gameBoard"></canvas>
+    <canvas id="gameBoard" style="border:1px solid black"></canvas>
+    <script>
+        const cool = document.getElementById('gameBoard');
+        const coolCtx = cool.getContext('2d');
+
+        const paddle1 = {x: 10, y: 50};
+        const paddle2 = {x: 285, y: 50};
+
+        function renderPaddle(paddle) {
+            coolCtx.fillStyle = 'white';
+            coolCtx.fillRect(paddle.x, paddle.y, 5, 40);
+        }
+        renderPaddle(paddle1);
+        renderPaddle(paddle2);
+    </script>
 </body>
 </html>
